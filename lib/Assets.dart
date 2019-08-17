@@ -24,6 +24,7 @@ class Assets {
   static String CREDITCARD = "images/credit-card.png";
   static String PAYPAL = "images/paypal.png";
   static String CASHONDELIVERY = "images/cash-on-delivery.png";
+  static String LOGO = "images/FoodBuff-logo.png";
 //  static String MENU_MANAGE_CUSTOMER = "assest/menu/managecustomercontect.png";
 //  static String MENU_MANAGE_FOLLOWUP = "assest/menu/managefollowup.png";
 //  static String MENU_MANAGE_LEAVE = "assest/menu/manageleave.png";

@@ -124,7 +124,7 @@ class _HomePage extends State<HomePage> {
               ),
               Container(
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: options.map(
                     (item) {
@@ -134,68 +134,62 @@ class _HomePage extends State<HomePage> {
                             selectedMenu = item.id;
                           });
                         },
-                        child: Padding(
-                          padding:
-                              const EdgeInsets.only(right: 8.0, bottom: 8.0),
-                          child: Container(
-                            padding: EdgeInsets.only(
-                                top: 5.0, right: 15.0, left: 15.0),
-                            child: Column(
-                              children: <Widget>[
-                                Row(
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.all(8.0),
-                                      child: Row(
-                                        children: <Widget>[
-                                          Image.asset(
-                                            item.icon,
-                                            width: 20.0,
-                                            height: 20.0,
-                                            color: selectedMenu == item.id
-                                                ? Colors.green
-                                                : Colors.black,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                                Row(
-                                  children: <Widget>[
-                                    Row(
+                        child: Container(
+                          child: Column(
+                            children: <Widget>[
+                              Row(
+                                children: <Widget>[
+                                  Padding(
+                                    padding: const EdgeInsets.all(8.0),
+                                    child: Row(
                                       children: <Widget>[
-                                        Text(
-                                          item.title,
-                                          style: TextStyle(
-                                            fontSize: 16,
-                                            fontWeight: FontWeight.w400,
-                                            color: selectedMenu == item.id
-                                                ? Colors.green
-                                                : Colors.black,
-                                          ),
-                                          textAlign: TextAlign.center,
+                                        Image.asset(
+                                          item.icon,
+                                          width: 20.0,
+                                          height: 20.0,
+                                          color: selectedMenu == item.id
+                                              ? Colors.green
+                                              : Colors.black,
                                         ),
                                       ],
                                     ),
-                                  ],
-                                ),
-                                Padding(
-                                  padding: const EdgeInsets.only(top: 8.0),
-                                  child: Row(
+                                  ),
+                                ],
+                              ),
+                              Row(
+                                children: <Widget>[
+                                  Row(
                                     children: <Widget>[
-                                      selectedMenu == item.id
-                                          ? Container(
-                                              height: 2.0,
-                                              width: 60.0,
-                                              color: Colors.green,
-                                            )
-                                          : Container(),
+                                      Text(
+                                        item.title,
+                                        style: TextStyle(
+                                          fontSize: 16,
+                                          fontWeight: FontWeight.w400,
+                                          color: selectedMenu == item.id
+                                              ? Colors.green
+                                              : Colors.black,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                      ),
                                     ],
                                   ),
-                                )
-                              ],
-                            ),
+                                ],
+                              ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 5.0),
+                                child: Row(
+                                  children: <Widget>[
+                                    selectedMenu == item.id
+                                        ? Container(
+                                            height: 2.0,
+                                            width: 50.0,
+                                            color: Colors.green,
+                                          )
+                                        : Container(),
+                                  ],
+                                ),
+                              )
+                            ],
                           ),
                         ),
                       );
@@ -206,7 +200,7 @@ class _HomePage extends State<HomePage> {
               Visibility(
                 visible: selectedMenu == Constant.Home ? true : false,
                 child: Container(
-                  height: MediaQuery.of(context).size.height - 150,
+                  height: MediaQuery.of(context).size.height - 110,
                   child: SingleChildScrollView(
                     physics: AlwaysScrollableScrollPhysics(),
                     scrollDirection: Axis.vertical,
