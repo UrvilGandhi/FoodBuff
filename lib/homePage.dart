@@ -29,7 +29,6 @@ class _HomePage extends State<HomePage> {
     'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT43GN3ZTwveusFop2eLUPqsbb5NmlsD9ZmSvOMLBpq0lPLy5OS',
     'http://img1.wsimg.com/isteam/stock/2999',
     'http://www.indian-by-nature.com/wp-content/uploads/2018/06/862638.jpg',
-    'https://cdn-image.foodandwine.com/sites/default/files/1510583448/paper-dosa-2-south-indian-food-FT-BLOG1117.jpg',
     'https://www.newyorkminutemag.com/wp-content/uploads/2012/10/35094182543_f52a0ec1c5_b.jpg'
   ];
 
@@ -200,7 +199,7 @@ class _HomePage extends State<HomePage> {
               Visibility(
                 visible: selectedMenu == Constant.Home ? true : false,
                 child: Container(
-                  height: MediaQuery.of(context).size.height - 110,
+                  height: MediaQuery.of(context).size.height - 140,
                   child: SingleChildScrollView(
                     physics: AlwaysScrollableScrollPhysics(),
                     scrollDirection: Axis.vertical,
@@ -218,7 +217,8 @@ class _HomePage extends State<HomePage> {
                                 return Builder(
                                   builder: (BuildContext context) {
                                     return Container(
-                                      width: MediaQuery.of(context).size.width,
+                                      width: MediaQuery.of(context).size.width +
+                                          50,
                                       margin:
                                           EdgeInsets.symmetric(horizontal: 2.0),
                                       child: Image.network(
@@ -233,406 +233,746 @@ class _HomePage extends State<HomePage> {
                           ),
                         ),
                         Container(
+                          height: 320.0,
                           margin: EdgeInsets.only(
                               top: 15.0, bottom: 15.0, left: 5.0, right: 5.0),
-                          height: MediaQuery.of(context).size.height,
                           child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
                             children: <Widget>[
-                              Expanded(
-                                child: Column(
-                                  mainAxisAlignment: MainAxisAlignment.start,
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  children: <Widget>[
-                                    Container(
-                                      child: Text(
-                                        'New Restuarant (10)',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.w400,
-                                          fontStyle: FontStyle.normal,
-                                        ),
-                                      ),
-                                      margin: EdgeInsets.only(
-                                          left: 8.0, bottom: 5.0),
-                                    ),
-                                    Container(
-                                      child: Expanded(
-                                        child: ListView.builder(
-                                          shrinkWrap: true,
-                                          itemCount: 8,
-                                          scrollDirection: Axis.horizontal,
-                                          itemBuilder: (BuildContext context,
-                                              int index) {
-                                            return GestureDetector(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        DetailPage(),
-                                                  ),
-                                                );
-                                              },
-                                              child: Container(
-                                                width: MediaQuery.of(context)
-                                                    .size
-                                                    .width,
-                                                child: Card(
-                                                  elevation: 5.0,
-                                                  child: Column(
-                                                    mainAxisSize:
-                                                        MainAxisSize.min,
+                              Container(
+                                child: Text(
+                                  'NEARBY RESTUARANT (10)',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                ),
+                                margin: EdgeInsets.only(left: 8.0, bottom: 5.0),
+                              ),
+                              Container(
+                                child: Expanded(
+                                  flex: 2,
+                                  child: ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: 8,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DetailPage(),
+                                            ),
+                                          );
+                                        },
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                                  .size
+                                                  .width -
+                                              50,
+                                          child: Card(
+                                            elevation: 5.0,
+                                            child: Column(
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10.0,
+                                                      left: 10.0,
+                                                      top: 15.0),
+                                                  child: Row(
                                                     children: <Widget>[
-                                                      Container(
-                                                        margin: EdgeInsets.only(
-                                                            right: 15.0,
-                                                            left: 15.0,
-                                                            top: 15.0),
-                                                        child: Row(
-                                                          children: <Widget>[
-                                                            Expanded(
-                                                              flex: 20,
-                                                              child: Text(
-                                                                'Ochre Restuarant',
-                                                                style:
-                                                                    TextStyle(
-                                                                  color: Colors
-                                                                      .black,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .bold,
-                                                                  fontSize:
-                                                                      18.0,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              flex: 2,
-                                                              child: Icon(
-                                                                Icons.star,
-                                                                size: 15.0,
-                                                                color: Colors
-                                                                        .yellow[
-                                                                    800],
-                                                              ),
-                                                            ),
-                                                            Expanded(
-                                                              flex: 2,
-                                                              child: Container(
-                                                                color: Colors
-                                                                    .green,
-                                                                padding:
-                                                                    EdgeInsets
-                                                                        .all(
-                                                                            2.0),
-                                                                child: Text(
-                                                                  '4.0',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                        .white,
-                                                                  ),
-                                                                  textAlign:
-                                                                      TextAlign
-                                                                          .center,
-                                                                ),
-                                                              ),
-                                                            ),
-                                                          ],
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
+                                                      Expanded(
+                                                        flex: 20,
+                                                        child: Text(
+                                                          'Ochre Restuarant',
+                                                          style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                                FontWeight.bold,
+                                                            fontSize: 18.0,
+                                                          ),
                                                         ),
                                                       ),
-                                                      Container(
-                                                        child: Row(
-                                                          children: <Widget>[
-                                                            Text(
-                                                              'Thai,Vegeterian Friendly,Healthy',
-                                                              style: TextStyle(
-                                                                fontSize: 13.0,
-                                                                color: Colors
-                                                                    .grey[400],
-                                                              ),
-                                                            ),
-                                                          ],
-                                                        ),
-                                                        margin: EdgeInsets.only(
-                                                            left: 15.0,
-                                                            right: 15.0,
-                                                            top: 10.0),
-                                                      ),
-                                                      Container(
-                                                        margin: EdgeInsets.only(
-                                                          top: 10.0,
-                                                          right: 15.0,
-                                                          left: 15.0,
-                                                        ),
-                                                        child: Row(
-                                                          children: <Widget>[
-                                                            Row(
-                                                              children: <
-                                                                  Widget>[
-                                                                Icon(
-                                                                  Icons
-                                                                      .access_time,
-                                                                  size: 18.0,
-                                                                  color: Colors
-                                                                          .grey[
-                                                                      400],
-                                                                ),
-                                                                Text(
-                                                                  ' Open 10AM-10PM | ',
-                                                                  style: TextStyle(
-                                                                      color: Colors
-                                                                              .grey[
-                                                                          400]),
-                                                                ),
-                                                                Image.asset(
-                                                                  Assets
-                                                                      .HOMEPAGE_SCOOTER,
-                                                                  color: Colors
-                                                                          .grey[
-                                                                      400],
-                                                                  height: 18.0,
-                                                                  width: 18.0,
-                                                                ),
-                                                                Text(
-                                                                  ' ETA 20-30 min.',
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: Colors
-                                                                            .grey[
-                                                                        400],
-                                                                  ),
-                                                                ),
-                                                                Container(
-                                                                  padding: EdgeInsets
-                                                                      .only(
-                                                                          left:
-                                                                              70.0),
-                                                                  child:
-                                                                      GestureDetector(
-                                                                    onTap: () {
-                                                                      setState(
-                                                                          () {
-                                                                        if (isLiked ==
-                                                                            false) {
-                                                                          isLiked =
-                                                                              true;
-                                                                        } else {
-                                                                          isLiked =
-                                                                              false;
-                                                                        }
-                                                                      });
-                                                                    },
-                                                                    child: Icon(
-                                                                      isLiked ==
-                                                                              true
-                                                                          ? Icons
-                                                                              .favorite
-                                                                          : Icons
-                                                                              .favorite_border,
-                                                                      size:
-                                                                          18.0,
-                                                                      color: Colors
-                                                                          .redAccent,
-                                                                    ),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ],
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Icon(
+                                                          Icons.star,
+                                                          size: 15.0,
+                                                          color: Colors
+                                                              .yellow[800],
                                                         ),
                                                       ),
-                                                      Container(
-                                                        height: 265.0,
-                                                        child: Row(
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .start,
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Container(
+                                                          color: Colors.green,
+                                                          padding:
+                                                              EdgeInsets.all(
+                                                                  2.0),
+                                                          child: Text(
+                                                            '4.0',
+                                                            style: TextStyle(
+                                                              color:
+                                                                  Colors.white,
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceBetween,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                      const EdgeInsets.only(
+                                                          top: 5.0, left: 10.0),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Text(
+                                                        'Thai,Vegeterian Friendly,Healthy',
+                                                        style: TextStyle(
+                                                          fontSize: 13.0,
+                                                          color:
+                                                              Colors.grey[400],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  width: MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                                  margin: EdgeInsets.only(
+                                                    top: 5.0,
+                                                  ),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Icon(
+                                                          Icons.access_time,
+                                                          size: 18.0,
+                                                          color:
+                                                              Colors.grey[400],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 4,
+                                                        child: Text(
+                                                          'Open 10AM-10PM |',
+                                                          style: TextStyle(
+                                                            color: Colors
+                                                                .grey[400],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Image.asset(
+                                                          Assets
+                                                              .HOMEPAGE_SCOOTER,
+                                                          color:
+                                                              Colors.grey[400],
+                                                          height: 18.0,
+                                                          width: 18.0,
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 4,
+                                                        child: Text(
+                                                          ' ETA 20-30 min.',
+                                                          style: TextStyle(
+                                                            color: Colors
+                                                                .grey[400],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Container(
+                                                          child:
+                                                              GestureDetector(
+                                                            onTap: () {
+                                                              setState(() {
+                                                                if (isLiked ==
+                                                                    false) {
+                                                                  isLiked =
+                                                                      true;
+                                                                } else {
+                                                                  isLiked =
+                                                                      false;
+                                                                }
+                                                              });
+                                                            },
+                                                            child: Icon(
+                                                              isLiked == true
+                                                                  ? Icons
+                                                                      .favorite
+                                                                  : Icons
+                                                                      .favorite_border,
+                                                              size: 18.0,
+                                                              color: Colors
+                                                                  .redAccent,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height: 200.0,
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Column(
                                                           children: <Widget>[
                                                             Expanded(
-                                                              flex: 2,
-                                                              child: Column(
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: <
-                                                                    Widget>[
-                                                                  Expanded(
-                                                                    child: Card(
-                                                                      elevation:
-                                                                          8.0,
-                                                                      child: Image
-                                                                          .asset(
-                                                                        Assets
-                                                                            .HOMEPAGE_1,
-                                                                        fit: BoxFit
-                                                                            .fill,
-                                                                      ),
-                                                                      shape:
-                                                                          RoundedRectangleBorder(
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(8.0),
-                                                                        side:
-                                                                            BorderSide(
-                                                                          style:
-                                                                              BorderStyle.solid,
-                                                                          width:
-                                                                              1.0,
-                                                                          color:
-                                                                              Colors.transparent,
+                                                              child: Padding(
+                                                                padding: const EdgeInsets.only(top: 15.0),
+                                                                child: Card(
+                                                                  shape: RoundedRectangleBorder(
+                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                  ),
+                                                                  elevation: 5.0,
+                                                                  child: Stack(
+                                                                    children: <Widget>[
+                                                                      Container(
+                                                                        decoration: BoxDecoration(
+                                                                          shape: BoxShape.rectangle,
+                                                                          borderRadius:
+                                                                          BorderRadius.circular(10.0),
+                                                                          image: DecorationImage(
+                                                                            fit: BoxFit.fill,
+                                                                            image: AssetImage(
+                                                                              "images/13.jpg",
+                                                                            ),
+                                                                          ),
                                                                         ),
                                                                       ),
-                                                                      margin: EdgeInsets.only(
-                                                                          top:
-                                                                              25.0,
-                                                                          right:
-                                                                              5.0,
-                                                                          left:
-                                                                              5.0,
-                                                                          bottom:
-                                                                              2.0),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            Expanded(
+                                                              flex: 4,
+                                                              child: Row(
+                                                                children: <Widget>[
+                                                                  Expanded(
+                                                                    flex: 2,
+                                                                    child: Container(
+                                                                      margin: EdgeInsets.only(top: 15.0,),
+                                                                      child: Card(
+                                                                        shape: RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                        ),
+                                                                        elevation: 5.0,
+                                                                        child: Stack(
+                                                                          children: <Widget>[
+                                                                            Container(
+                                                                              decoration: BoxDecoration(
+                                                                                shape: BoxShape.rectangle,
+                                                                                borderRadius:
+                                                                                BorderRadius.circular(10.0),
+                                                                                image: DecorationImage(
+                                                                                  fit: BoxFit.fill,
+                                                                                  image: AssetImage(
+                                                                                    "images/13.jpg",
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    flex: 2,
+                                                                    child: Container(
+                                                                      margin: EdgeInsets.only(top: 15.0,),
+                                                                      child: Card(
+                                                                        shape: RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                        ),
+                                                                        elevation: 5.0,
+                                                                        child: Stack(
+                                                                          children: <Widget>[
+                                                                            Container(
+                                                                              decoration: BoxDecoration(
+                                                                                shape: BoxShape.rectangle,
+                                                                                borderRadius:
+                                                                                BorderRadius.circular(10.0),
+                                                                                image: DecorationImage(
+                                                                                  fit: BoxFit.fill,
+                                                                                  image: AssetImage(
+                                                                                    "images/13.jpg",
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                 ],
                                                               ),
                                                             ),
                                                             Expanded(
-                                                              flex: 2,
-                                                              child: Column(
-                                                                children: <
-                                                                    Widget>[
+                                                              flex: 3,
+                                                              child: Stack(
+                                                                children: <Widget>[
+                                                                      Container(
+                                                                        child: Card(
+                                                                          shape: RoundedRectangleBorder(
+                                                                            borderRadius: BorderRadius.circular(8.0),
+                                                                          ),
+                                                                          elevation: 5.0,
+                                                                          child: Stack(
+                                                                            children: <Widget>[
+                                                                              Container(
+                                                                                decoration: BoxDecoration(
+                                                                                  shape: BoxShape.rectangle,
+                                                                                  borderRadius:
+                                                                                  BorderRadius.circular(10.0),
+                                                                                  image: DecorationImage(
+                                                                                    fit: BoxFit.fill,
+                                                                                    image: AssetImage(
+                                                                                      "images/13.jpg",
+                                                                                    ),
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      Container(
+                                                                        decoration: BoxDecoration(shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(8.0),color: Color(0xff99000000)),
+                                                                      ),
+                                                                      Container(
+                                                                        alignment:
+                                                                            Alignment
+                                                                                .center,
+                                                                        child:
+                                                                            Text(
+                                                                          '15 photos',
+                                                                          style:
+                                                                              TextStyle(
+                                                                            color:
+                                                                                Colors.white,
+                                                                            fontStyle:
+                                                                                FontStyle.normal,
+                                                                            fontWeight:
+                                                                                FontWeight.w400,
+                                                                            fontSize:
+                                                                                24.0,
+                                                                          ),
+                                                                          textAlign:
+                                                                              TextAlign.center,
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 320.0,
+                          margin: EdgeInsets.only(
+                              bottom: 15.0, left: 5.0, right: 5.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Container(
+                                child: Text(
+                                  'POPULAR RESTUARANT (10)',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                ),
+                                margin: EdgeInsets.only(left: 8.0, bottom: 5.0),
+                              ),
+                              Container(
+                                child: Expanded(
+                                  flex: 2,
+                                  child: ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: 8,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DetailPage(),
+                                            ),
+                                          );
+                                        },
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width -
+                                              50,
+                                          child: Card(
+                                            elevation: 5.0,
+                                            child: Column(
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10.0,
+                                                      left: 10.0,
+                                                      top: 15.0),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 20,
+                                                        child: Text(
+                                                          'Ochre Restuarant',
+                                                          style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                            FontWeight.bold,
+                                                            fontSize: 18.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Icon(
+                                                          Icons.star,
+                                                          size: 15.0,
+                                                          color: Colors
+                                                              .yellow[800],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Container(
+                                                          color: Colors.green,
+                                                          padding:
+                                                          EdgeInsets.all(
+                                                              2.0),
+                                                          child: Text(
+                                                            '4.0',
+                                                            style: TextStyle(
+                                                              color:
+                                                              Colors.white,
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                    mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                  const EdgeInsets.only(
+                                                      top: 5.0, left: 10.0),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Text(
+                                                        'Thai,Vegeterian Friendly,Healthy',
+                                                        style: TextStyle(
+                                                          fontSize: 13.0,
+                                                          color:
+                                                          Colors.grey[400],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  width: MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                                  margin: EdgeInsets.only(
+                                                    top: 5.0,
+                                                  ),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Icon(
+                                                          Icons.access_time,
+                                                          size: 18.0,
+                                                          color:
+                                                          Colors.grey[400],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 4,
+                                                        child: Text(
+                                                          'Open 10AM-10PM |',
+                                                          style: TextStyle(
+                                                            color: Colors
+                                                                .grey[400],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Image.asset(
+                                                          Assets
+                                                              .HOMEPAGE_SCOOTER,
+                                                          color:
+                                                          Colors.grey[400],
+                                                          height: 18.0,
+                                                          width: 18.0,
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 4,
+                                                        child: Text(
+                                                          ' ETA 20-30 min.',
+                                                          style: TextStyle(
+                                                            color: Colors
+                                                                .grey[400],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Container(
+                                                          child:
+                                                          GestureDetector(
+                                                            onTap: () {
+                                                              setState(() {
+                                                                if (isLiked ==
+                                                                    false) {
+                                                                  isLiked =
+                                                                  true;
+                                                                } else {
+                                                                  isLiked =
+                                                                  false;
+                                                                }
+                                                              });
+                                                            },
+                                                            child: Icon(
+                                                              isLiked == true
+                                                                  ? Icons
+                                                                  .favorite
+                                                                  : Icons
+                                                                  .favorite_border,
+                                                              size: 18.0,
+                                                              color: Colors
+                                                                  .redAccent,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height: 200.0,
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            Expanded(
+                                                              child: Padding(
+                                                                padding: const EdgeInsets.only(top: 15.0),
+                                                                child: Card(
+                                                                  shape: RoundedRectangleBorder(
+                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                  ),
+                                                                  elevation: 5.0,
+                                                                  child: Stack(
+                                                                    children: <Widget>[
+                                                                      Container(
+                                                                        decoration: BoxDecoration(
+                                                                          shape: BoxShape.rectangle,
+                                                                          borderRadius:
+                                                                          BorderRadius.circular(10.0),
+                                                                          image: DecorationImage(
+                                                                            fit: BoxFit.fill,
+                                                                            image: AssetImage(
+                                                                              "images/13.jpg",
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            Expanded(
+                                                              flex: 4,
+                                                              child: Row(
+                                                                children: <Widget>[
                                                                   Expanded(
-                                                                    flex: 4,
-                                                                    child: Row(
-                                                                      children: <
-                                                                          Widget>[
-                                                                        Expanded(
-                                                                          flex:
-                                                                              2,
-                                                                          child:
-                                                                              Container(
-                                                                            margin:
-                                                                                EdgeInsets.only(top: 15.0),
-                                                                            width:
-                                                                                125.0,
-                                                                            height:
-                                                                                125.0,
-                                                                            child:
-                                                                                Card(
-                                                                              elevation: 8.0,
-                                                                              child: Image.asset(
-                                                                                Assets.HOMEPAGE_3,
-                                                                                fit: BoxFit.fill,
-                                                                              ),
-                                                                              shape: RoundedRectangleBorder(
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                side: BorderSide(
-                                                                                  style: BorderStyle.solid,
-                                                                                  width: 1.0,
-                                                                                  color: Colors.transparent,
+                                                                    flex: 2,
+                                                                    child: Container(
+                                                                      margin: EdgeInsets.only(top: 15.0,),
+                                                                      child: Card(
+                                                                        shape: RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                        ),
+                                                                        elevation: 5.0,
+                                                                        child: Stack(
+                                                                          children: <Widget>[
+                                                                            Container(
+                                                                              decoration: BoxDecoration(
+                                                                                shape: BoxShape.rectangle,
+                                                                                borderRadius:
+                                                                                BorderRadius.circular(10.0),
+                                                                                image: DecorationImage(
+                                                                                  fit: BoxFit.fill,
+                                                                                  image: AssetImage(
+                                                                                    "images/13.jpg",
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ),
+                                                                          ],
                                                                         ),
-                                                                        Expanded(
-                                                                          flex:
-                                                                              2,
-                                                                          child:
-                                                                              Container(
-                                                                            margin:
-                                                                                EdgeInsets.only(top: 15.0),
-                                                                            width:
-                                                                                125.0,
-                                                                            height:
-                                                                                125.0,
-                                                                            child:
-                                                                                Card(
-                                                                              elevation: 8.0,
-                                                                              child: Image.asset(
-                                                                                Assets.HOMEPAGE_4,
-                                                                                fit: BoxFit.fill,
-                                                                              ),
-                                                                              shape: RoundedRectangleBorder(
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                side: BorderSide(
-                                                                                  style: BorderStyle.solid,
-                                                                                  width: 1.0,
-                                                                                  color: Colors.transparent,
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
+                                                                      ),
                                                                     ),
                                                                   ),
                                                                   Expanded(
-                                                                    flex: 3,
-                                                                    child:
-                                                                        GestureDetector(
-                                                                      child:
-                                                                          Stack(
-                                                                        children: <
-                                                                            Widget>[
-                                                                          Container(
-                                                                            width:
-                                                                                200.0,
-                                                                            child:
-                                                                                Card(
-                                                                              elevation: 8.0,
-                                                                              child: Image.asset(
-                                                                                Assets.HOMEPAGE_5,
-                                                                                fit: BoxFit.fill,
-                                                                              ),
-                                                                              shape: RoundedRectangleBorder(
-                                                                                borderRadius: BorderRadius.circular(8.0),
-                                                                                side: BorderSide(
-                                                                                  style: BorderStyle.solid,
-                                                                                  width: 1.0,
-                                                                                  color: Colors.transparent,
+                                                                    flex: 2,
+                                                                    child: Container(
+                                                                      margin: EdgeInsets.only(top: 15.0,),
+                                                                      child: Card(
+                                                                        shape: RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                        ),
+                                                                        elevation: 5.0,
+                                                                        child: Stack(
+                                                                          children: <Widget>[
+                                                                            Container(
+                                                                              decoration: BoxDecoration(
+                                                                                shape: BoxShape.rectangle,
+                                                                                borderRadius:
+                                                                                BorderRadius.circular(10.0),
+                                                                                image: DecorationImage(
+                                                                                  fit: BoxFit.fill,
+                                                                                  image: AssetImage(
+                                                                                    "images/13.jpg",
+                                                                                  ),
                                                                                 ),
                                                                               ),
                                                                             ),
-                                                                          ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              flex: 3,
+                                                              child: Stack(
+                                                                children: <Widget>[
+                                                                  Container(
+                                                                    child: Card(
+                                                                      shape: RoundedRectangleBorder(
+                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                      ),
+                                                                      elevation: 5.0,
+                                                                      child: Stack(
+                                                                        children: <Widget>[
                                                                           Container(
-                                                                            margin: EdgeInsets.only(
-                                                                                right: 3.0,
-                                                                                left: 3.0,
-                                                                                bottom: 3.0),
-                                                                            width:
-                                                                                200,
-                                                                            color:
-                                                                                Color(0xff99000000),
-                                                                          ),
-                                                                          Container(
-                                                                            alignment:
-                                                                                Alignment.center,
-                                                                            child:
-                                                                                Text(
-                                                                              '15 photos',
-                                                                              style: TextStyle(
-                                                                                color: Colors.white,
-                                                                                fontStyle: FontStyle.normal,
-                                                                                fontWeight: FontWeight.w400,
-                                                                                fontSize: 24.0,
+                                                                            decoration: BoxDecoration(
+                                                                              shape: BoxShape.rectangle,
+                                                                              borderRadius:
+                                                                              BorderRadius.circular(10.0),
+                                                                              image: DecorationImage(
+                                                                                fit: BoxFit.fill,
+                                                                                image: AssetImage(
+                                                                                  "images/13.jpg",
+                                                                                ),
                                                                               ),
-                                                                              textAlign: TextAlign.center,
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
+                                                                    ),
+                                                                  ),
+                                                                  Container(
+                                                                    decoration: BoxDecoration(shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(8.0),color: Color(0xff99000000)),
+                                                                  ),
+                                                                  Container(
+                                                                    alignment:
+                                                                    Alignment
+                                                                        .center,
+                                                                    child:
+                                                                    Text(
+                                                                      '15 photos',
+                                                                      style:
+                                                                      TextStyle(
+                                                                        color:
+                                                                        Colors.white,
+                                                                        fontStyle:
+                                                                        FontStyle.normal,
+                                                                        fontWeight:
+                                                                        FontWeight.w400,
+                                                                        fontSize:
+                                                                        24.0,
+                                                                      ),
+                                                                      textAlign:
+                                                                      TextAlign.center,
                                                                     ),
                                                                   ),
                                                                 ],
@@ -644,418 +984,777 @@ class _HomePage extends State<HomePage> {
                                                     ],
                                                   ),
                                                 ),
-                                              ),
-                                            );
-                                          },
+                                              ],
+                                            ),
+                                          ),
                                         ),
-                                      ),
-                                    ),
-                                  ],
+                                      );
+                                    },
+                                  ),
                                 ),
                               ),
-                              Expanded(
-                                child: Column(
-                                  children: <Widget>[
-                                    Container(
-                                      margin: EdgeInsets.only(
-                                          left: 8.0, bottom: 5.0, top: 10.0),
-                                      alignment: Alignment.topLeft,
-                                      child: Text(
-                                        'Popular Restuarant (22)',
-                                        style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.w400,
-                                          fontStyle: FontStyle.normal,
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      height: 350.0,
-                                      child: ListView.builder(
-                                        shrinkWrap: true,
-                                        itemCount: 8,
-                                        scrollDirection: Axis.horizontal,
-                                        itemBuilder:
-                                            (BuildContext context, int index) {
-                                          return Container(
-                                            width: MediaQuery.of(context)
-                                                .size
-                                                .width,
-                                            child: GestureDetector(
-                                              onTap: () {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        DetailPage(),
-                                                  ),
-                                                );
-                                              },
-                                              child: Card(
-                                                elevation: 5.0,
-                                                child: Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: <Widget>[
-                                                    Container(
-                                                      margin: EdgeInsets.only(
-                                                          right: 15.0,
-                                                          left: 15.0,
-                                                          top: 15.0),
-                                                      child: Row(
-                                                        children: <Widget>[
-                                                          Expanded(
-                                                            flex: 20,
-                                                            child: Text(
-                                                              'Ochre Restuarant',
-                                                              style: TextStyle(
-                                                                color: Colors
-                                                                    .black,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .bold,
-                                                                fontSize: 18.0,
-                                                              ),
-                                                            ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 320.0,
+                          margin: EdgeInsets.only(
+                              bottom: 15.0, left: 5.0, right: 5.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Container(
+                                child: Text(
+                                  'POPULAR RESTUARANT (10)',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                ),
+                                margin: EdgeInsets.only(left: 8.0, bottom: 5.0),
+                              ),
+                              Container(
+                                child: Expanded(
+                                  flex: 2,
+                                  child: ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: 8,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DetailPage(),
+                                            ),
+                                          );
+                                        },
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width -
+                                              50,
+                                          child: Card(
+                                            elevation: 5.0,
+                                            child: Column(
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10.0,
+                                                      left: 10.0,
+                                                      top: 15.0),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 20,
+                                                        child: Text(
+                                                          'Ochre Restuarant',
+                                                          style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                            FontWeight.bold,
+                                                            fontSize: 18.0,
                                                           ),
-                                                          Expanded(
-                                                            flex: 2,
-                                                            child: Icon(
-                                                              Icons.star,
-                                                              size: 15.0,
-                                                              color: Colors
-                                                                  .yellow[800],
-                                                            ),
-                                                          ),
-                                                          Expanded(
-                                                            flex: 2,
-                                                            child: Container(
-                                                              color:
-                                                                  Colors.green,
-                                                              padding:
-                                                                  EdgeInsets
-                                                                      .all(2.0),
-                                                              child: Text(
-                                                                '4.0',
-                                                                style:
-                                                                    TextStyle(
-                                                                  color: Colors
-                                                                      .white,
-                                                                ),
-                                                                textAlign:
-                                                                    TextAlign
-                                                                        .center,
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        ],
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .spaceBetween,
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Container(
-                                                      child: Row(
-                                                        children: <Widget>[
-                                                          Text(
-                                                            'Thai,Vegeterian Friendly,Healthy',
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Icon(
+                                                          Icons.star,
+                                                          size: 15.0,
+                                                          color: Colors
+                                                              .yellow[800],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Container(
+                                                          color: Colors.green,
+                                                          padding:
+                                                          EdgeInsets.all(
+                                                              2.0),
+                                                          child: Text(
+                                                            '4.0',
                                                             style: TextStyle(
-                                                              fontSize: 13.0,
+                                                              color:
+                                                              Colors.white,
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                    mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                  const EdgeInsets.only(
+                                                      top: 5.0, left: 10.0),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Text(
+                                                        'Thai,Vegeterian Friendly,Healthy',
+                                                        style: TextStyle(
+                                                          fontSize: 13.0,
+                                                          color:
+                                                          Colors.grey[400],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  width: MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                                  margin: EdgeInsets.only(
+                                                    top: 5.0,
+                                                  ),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Icon(
+                                                          Icons.access_time,
+                                                          size: 18.0,
+                                                          color:
+                                                          Colors.grey[400],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 4,
+                                                        child: Text(
+                                                          'Open 10AM-10PM |',
+                                                          style: TextStyle(
+                                                            color: Colors
+                                                                .grey[400],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Image.asset(
+                                                          Assets
+                                                              .HOMEPAGE_SCOOTER,
+                                                          color:
+                                                          Colors.grey[400],
+                                                          height: 18.0,
+                                                          width: 18.0,
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 4,
+                                                        child: Text(
+                                                          ' ETA 20-30 min.',
+                                                          style: TextStyle(
+                                                            color: Colors
+                                                                .grey[400],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Container(
+                                                          child:
+                                                          GestureDetector(
+                                                            onTap: () {
+                                                              setState(() {
+                                                                if (isLiked ==
+                                                                    false) {
+                                                                  isLiked =
+                                                                  true;
+                                                                } else {
+                                                                  isLiked =
+                                                                  false;
+                                                                }
+                                                              });
+                                                            },
+                                                            child: Icon(
+                                                              isLiked == true
+                                                                  ? Icons
+                                                                  .favorite
+                                                                  : Icons
+                                                                  .favorite_border,
+                                                              size: 18.0,
                                                               color: Colors
-                                                                  .grey[400],
+                                                                  .redAccent,
                                                             ),
                                                           ),
-                                                        ],
+                                                        ),
                                                       ),
-                                                      margin: EdgeInsets.only(
-                                                          left: 15.0,
-                                                          right: 15.0,
-                                                          top: 10.0),
-                                                    ),
-                                                    Container(
-                                                      margin: EdgeInsets.only(
-                                                          top: 10.0,
-                                                          right: 15.0,
-                                                          left: 15.0,
-                                                          bottom: 10.0),
-                                                      child: Row(
-                                                        children: <Widget>[
-                                                          Row(
-                                                            children: <Widget>[
-                                                              Icon(
-                                                                Icons
-                                                                    .access_time,
-                                                                size: 18.0,
-                                                                color: Colors
-                                                                    .grey[400],
-                                                              ),
-                                                              Text(
-                                                                ' Open 10AM-10PM | ',
-                                                                style: TextStyle(
-                                                                    color: Colors
-                                                                            .grey[
-                                                                        400]),
-                                                              ),
-                                                              Image.asset(
-                                                                Assets
-                                                                    .HOMEPAGE_SCOOTER,
-                                                                color: Colors
-                                                                    .grey[400],
-                                                                height: 18.0,
-                                                                width: 18.0,
-                                                              ),
-                                                              Text(
-                                                                ' ETA 20-30 min.',
-                                                                style:
-                                                                    TextStyle(
-                                                                  color: Colors
-                                                                          .grey[
-                                                                      400],
-                                                                ),
-                                                              ),
-                                                              Container(
-                                                                padding: EdgeInsets
-                                                                    .only(
-                                                                        left:
-                                                                            70.0),
-                                                                child:
-                                                                    GestureDetector(
-                                                                  onTap: () {
-                                                                    setState(
-                                                                        () {
-                                                                      if (isLiked ==
-                                                                          false) {
-                                                                        isLiked =
-                                                                            true;
-                                                                      } else {
-                                                                        isLiked =
-                                                                            false;
-                                                                      }
-                                                                    });
-                                                                  },
-                                                                  child: Icon(
-                                                                    isLiked == true
-                                                                        ? Icons
-                                                                            .favorite
-                                                                        : Icons
-                                                                            .favorite_border,
-                                                                    size: 18.0,
-                                                                    color: Colors
-                                                                        .redAccent,
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height: 200.0,
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            Expanded(
+                                                              child: Padding(
+                                                                padding: const EdgeInsets.only(top: 15.0),
+                                                                child: Card(
+                                                                  shape: RoundedRectangleBorder(
+                                                                    borderRadius: BorderRadius.circular(8.0),
                                                                   ),
-                                                                ),
-                                                              ),
-                                                            ],
-                                                          ),
-                                                        ],
-                                                      ),
-                                                    ),
-                                                    Container(
-                                                      height: 230,
-                                                      child: Row(
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        mainAxisAlignment:
-                                                            MainAxisAlignment
-                                                                .start,
-                                                        children: <Widget>[
-                                                          Expanded(
-                                                            flex: 2,
-                                                            child: Column(
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .start,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: <
-                                                                  Widget>[
-                                                                Expanded(
-                                                                  child: Card(
-                                                                    elevation:
-                                                                        8.0,
-                                                                    child: Image
-                                                                        .asset(
-                                                                      Assets
-                                                                          .HOMEPAGE_1,
-                                                                      fit: BoxFit
-                                                                          .fill,
-                                                                    ),
-                                                                    shape:
-                                                                        RoundedRectangleBorder(
-                                                                      borderRadius:
-                                                                          BorderRadius.circular(
-                                                                              8.0),
-                                                                      side:
-                                                                          BorderSide(
-                                                                        style: BorderStyle
-                                                                            .solid,
-                                                                        width:
-                                                                            1.0,
-                                                                        color: Colors
-                                                                            .transparent,
-                                                                      ),
-                                                                    ),
-                                                                    margin: EdgeInsets.only(
-                                                                        top:
-                                                                            12.0,
-                                                                        right:
-                                                                            5.0,
-                                                                        left:
-                                                                            5.0,
-                                                                        bottom:
-                                                                            2.0),
-                                                                  ),
-                                                                ),
-                                                              ],
-                                                            ),
-                                                          ),
-                                                          Expanded(
-                                                            flex: 2,
-                                                            child: Column(
-                                                              children: <
-                                                                  Widget>[
-                                                                Expanded(
-                                                                  flex: 3,
-                                                                  child: Row(
-                                                                    children: <
-                                                                        Widget>[
-                                                                      Expanded(
-                                                                        child:
-                                                                            Container(
-                                                                          child:
-                                                                              Card(
-                                                                            elevation:
-                                                                                8.0,
-                                                                            child:
-                                                                                Image.asset(
-                                                                              Assets.HOMEPAGE_3,
-                                                                              fit: BoxFit.fill,
-                                                                            ),
-                                                                            shape:
-                                                                                RoundedRectangleBorder(
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                              side: BorderSide(
-                                                                                style: BorderStyle.solid,
-                                                                                width: 1.0,
-                                                                                color: Colors.transparent,
-                                                                              ),
+                                                                  elevation: 5.0,
+                                                                  child: Stack(
+                                                                    children: <Widget>[
+                                                                      Container(
+                                                                        decoration: BoxDecoration(
+                                                                          shape: BoxShape.rectangle,
+                                                                          borderRadius:
+                                                                          BorderRadius.circular(10.0),
+                                                                          image: DecorationImage(
+                                                                            fit: BoxFit.fill,
+                                                                            image: AssetImage(
+                                                                              "images/13.jpg",
                                                                             ),
                                                                           ),
-                                                                          width:
-                                                                              25.0,
-                                                                          height:
-                                                                              100.0,
-                                                                        ),
-                                                                      ),
-                                                                      Expanded(
-                                                                        child:
-                                                                            Container(
-                                                                          child:
-                                                                              Card(
-                                                                            elevation:
-                                                                                8.0,
-                                                                            child:
-                                                                                Image.asset(
-                                                                              Assets.HOMEPAGE_4,
-                                                                              fit: BoxFit.fill,
-                                                                            ),
-                                                                            shape:
-                                                                                RoundedRectangleBorder(
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                              side: BorderSide(
-                                                                                style: BorderStyle.solid,
-                                                                                width: 1.0,
-                                                                                color: Colors.transparent,
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                          height:
-                                                                              100.0,
-                                                                          width:
-                                                                              25.0,
                                                                         ),
                                                                       ),
                                                                     ],
                                                                   ),
                                                                 ),
-                                                                Expanded(
-                                                                  flex: 3,
-                                                                  child:
-                                                                      GestureDetector(
-                                                                    child:
-                                                                        Stack(
-                                                                      children: <
-                                                                          Widget>[
-                                                                        Container(
-                                                                          width:
-                                                                              200.0,
-                                                                          child:
-                                                                              Card(
-                                                                            elevation:
-                                                                                8.0,
-                                                                            child:
-                                                                                Image.asset(
-                                                                              Assets.HOMEPAGE_5,
-                                                                              fit: BoxFit.fill,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            Expanded(
+                                                              flex: 4,
+                                                              child: Row(
+                                                                children: <Widget>[
+                                                                  Expanded(
+                                                                    flex: 2,
+                                                                    child: Container(
+                                                                      margin: EdgeInsets.only(top: 15.0,),
+                                                                      child: Card(
+                                                                        shape: RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                        ),
+                                                                        elevation: 5.0,
+                                                                        child: Stack(
+                                                                          children: <Widget>[
+                                                                            Container(
+                                                                              decoration: BoxDecoration(
+                                                                                shape: BoxShape.rectangle,
+                                                                                borderRadius:
+                                                                                BorderRadius.circular(10.0),
+                                                                                image: DecorationImage(
+                                                                                  fit: BoxFit.fill,
+                                                                                  image: AssetImage(
+                                                                                    "images/13.jpg",
+                                                                                  ),
+                                                                                ),
+                                                                              ),
                                                                             ),
-                                                                            shape:
-                                                                                RoundedRectangleBorder(
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                              side: BorderSide(
-                                                                                style: BorderStyle.solid,
-                                                                                width: 1.0,
-                                                                                color: Colors.transparent,
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    flex: 2,
+                                                                    child: Container(
+                                                                      margin: EdgeInsets.only(top: 15.0,),
+                                                                      child: Card(
+                                                                        shape: RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                        ),
+                                                                        elevation: 5.0,
+                                                                        child: Stack(
+                                                                          children: <Widget>[
+                                                                            Container(
+                                                                              decoration: BoxDecoration(
+                                                                                shape: BoxShape.rectangle,
+                                                                                borderRadius:
+                                                                                BorderRadius.circular(10.0),
+                                                                                image: DecorationImage(
+                                                                                  fit: BoxFit.fill,
+                                                                                  image: AssetImage(
+                                                                                    "images/13.jpg",
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              flex: 3,
+                                                              child: Stack(
+                                                                children: <Widget>[
+                                                                  Container(
+                                                                    child: Card(
+                                                                      shape: RoundedRectangleBorder(
+                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                      ),
+                                                                      elevation: 5.0,
+                                                                      child: Stack(
+                                                                        children: <Widget>[
+                                                                          Container(
+                                                                            decoration: BoxDecoration(
+                                                                              shape: BoxShape.rectangle,
+                                                                              borderRadius:
+                                                                              BorderRadius.circular(10.0),
+                                                                              image: DecorationImage(
+                                                                                fit: BoxFit.fill,
+                                                                                image: AssetImage(
+                                                                                  "images/13.jpg",
+                                                                                ),
                                                                               ),
                                                                             ),
                                                                           ),
-                                                                        ),
-                                                                        Container(
-                                                                          margin: EdgeInsets.only(
-                                                                              right: 3.0,
-                                                                              left: 3.0,
-                                                                              bottom: 3.0),
-                                                                          color:
-                                                                              Color(0xff99000000),
-                                                                        ),
-                                                                        Container(
-                                                                          alignment:
-                                                                              Alignment.center,
-                                                                          child:
-                                                                              Text(
-                                                                            '+15',
-                                                                            style:
-                                                                                TextStyle(
-                                                                              color: Colors.white,
-                                                                              fontStyle: FontStyle.normal,
-                                                                              fontWeight: FontWeight.w400,
-                                                                              fontSize: 32.0,
-                                                                            ),
-                                                                            textAlign:
-                                                                                TextAlign.center,
-                                                                          ),
-                                                                        ),
-                                                                      ],
+                                                                        ],
+                                                                      ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                              ],
+                                                                  Container(
+                                                                    decoration: BoxDecoration(shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(8.0),color: Color(0xff99000000)),
+                                                                  ),
+                                                                  Container(
+                                                                    alignment:
+                                                                    Alignment
+                                                                        .center,
+                                                                    child:
+                                                                    Text(
+                                                                      '15 photos',
+                                                                      style:
+                                                                      TextStyle(
+                                                                        color:
+                                                                        Colors.white,
+                                                                        fontStyle:
+                                                                        FontStyle.normal,
+                                                                        fontWeight:
+                                                                        FontWeight.w400,
+                                                                        fontSize:
+                                                                        24.0,
+                                                                      ),
+                                                                      textAlign:
+                                                                      TextAlign.center,
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             ),
-                                                          ),
-                                                        ],
+                                                          ],
+                                                        ),
                                                       ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
-                                              ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Container(
+                          height: 320.0,
+                          margin: EdgeInsets.only(
+                              bottom: 15.0, left: 5.0, right: 5.0),
+                          child: Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: <Widget>[
+                              Container(
+                                child: Text(
+                                  'POPULAR RESTUARANT (10)',
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w400,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                ),
+                                margin: EdgeInsets.only(left: 8.0, bottom: 5.0),
+                              ),
+                              Container(
+                                child: Expanded(
+                                  flex: 2,
+                                  child: ListView.builder(
+                                    shrinkWrap: true,
+                                    itemCount: 8,
+                                    scrollDirection: Axis.horizontal,
+                                    itemBuilder:
+                                        (BuildContext context, int index) {
+                                      return GestureDetector(
+                                        onTap: () {
+                                          Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                              builder: (context) =>
+                                                  DetailPage(),
                                             ),
                                           );
                                         },
-                                      ),
-                                    ),
-                                  ],
+                                        child: Container(
+                                          width: MediaQuery.of(context)
+                                              .size
+                                              .width -
+                                              50,
+                                          child: Card(
+                                            elevation: 5.0,
+                                            child: Column(
+                                              children: <Widget>[
+                                                Container(
+                                                  margin: EdgeInsets.only(
+                                                      right: 10.0,
+                                                      left: 10.0,
+                                                      top: 15.0),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 20,
+                                                        child: Text(
+                                                          'Ochre Restuarant',
+                                                          style: TextStyle(
+                                                            color: Colors.black,
+                                                            fontWeight:
+                                                            FontWeight.bold,
+                                                            fontSize: 18.0,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Icon(
+                                                          Icons.star,
+                                                          size: 15.0,
+                                                          color: Colors
+                                                              .yellow[800],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Container(
+                                                          color: Colors.green,
+                                                          padding:
+                                                          EdgeInsets.all(
+                                                              2.0),
+                                                          child: Text(
+                                                            '4.0',
+                                                            style: TextStyle(
+                                                              color:
+                                                              Colors.white,
+                                                            ),
+                                                            textAlign: TextAlign
+                                                                .center,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                    mainAxisAlignment:
+                                                    MainAxisAlignment
+                                                        .spaceBetween,
+                                                  ),
+                                                ),
+                                                Padding(
+                                                  padding:
+                                                  const EdgeInsets.only(
+                                                      top: 5.0, left: 10.0),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Text(
+                                                        'Thai,Vegeterian Friendly,Healthy',
+                                                        style: TextStyle(
+                                                          fontSize: 13.0,
+                                                          color:
+                                                          Colors.grey[400],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  width: MediaQuery.of(context)
+                                                      .size
+                                                      .width,
+                                                  margin: EdgeInsets.only(
+                                                    top: 5.0,
+                                                  ),
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Icon(
+                                                          Icons.access_time,
+                                                          size: 18.0,
+                                                          color:
+                                                          Colors.grey[400],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 4,
+                                                        child: Text(
+                                                          'Open 10AM-10PM |',
+                                                          style: TextStyle(
+                                                            color: Colors
+                                                                .grey[400],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Image.asset(
+                                                          Assets
+                                                              .HOMEPAGE_SCOOTER,
+                                                          color:
+                                                          Colors.grey[400],
+                                                          height: 18.0,
+                                                          width: 18.0,
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 4,
+                                                        child: Text(
+                                                          ' ETA 20-30 min.',
+                                                          style: TextStyle(
+                                                            color: Colors
+                                                                .grey[400],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 1,
+                                                        child: Container(
+                                                          child:
+                                                          GestureDetector(
+                                                            onTap: () {
+                                                              setState(() {
+                                                                if (isLiked ==
+                                                                    false) {
+                                                                  isLiked =
+                                                                  true;
+                                                                } else {
+                                                                  isLiked =
+                                                                  false;
+                                                                }
+                                                              });
+                                                            },
+                                                            child: Icon(
+                                                              isLiked == true
+                                                                  ? Icons
+                                                                  .favorite
+                                                                  : Icons
+                                                                  .favorite_border,
+                                                              size: 18.0,
+                                                              color: Colors
+                                                                  .redAccent,
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                                Container(
+                                                  height: 200.0,
+                                                  child: Row(
+                                                    children: <Widget>[
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            Expanded(
+                                                              child: Padding(
+                                                                padding: const EdgeInsets.only(top: 15.0),
+                                                                child: Card(
+                                                                  shape: RoundedRectangleBorder(
+                                                                    borderRadius: BorderRadius.circular(8.0),
+                                                                  ),
+                                                                  elevation: 5.0,
+                                                                  child: Stack(
+                                                                    children: <Widget>[
+                                                                      Container(
+                                                                        decoration: BoxDecoration(
+                                                                          shape: BoxShape.rectangle,
+                                                                          borderRadius:
+                                                                          BorderRadius.circular(10.0),
+                                                                          image: DecorationImage(
+                                                                            fit: BoxFit.fill,
+                                                                            image: AssetImage(
+                                                                              "images/13.jpg",
+                                                                            ),
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                      Expanded(
+                                                        flex: 2,
+                                                        child: Column(
+                                                          children: <Widget>[
+                                                            Expanded(
+                                                              flex: 4,
+                                                              child: Row(
+                                                                children: <Widget>[
+                                                                  Expanded(
+                                                                    flex: 2,
+                                                                    child: Container(
+                                                                      margin: EdgeInsets.only(top: 15.0,),
+                                                                      child: Card(
+                                                                        shape: RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                        ),
+                                                                        elevation: 5.0,
+                                                                        child: Stack(
+                                                                          children: <Widget>[
+                                                                            Container(
+                                                                              decoration: BoxDecoration(
+                                                                                shape: BoxShape.rectangle,
+                                                                                borderRadius:
+                                                                                BorderRadius.circular(10.0),
+                                                                                image: DecorationImage(
+                                                                                  fit: BoxFit.fill,
+                                                                                  image: AssetImage(
+                                                                                    "images/13.jpg",
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Expanded(
+                                                                    flex: 2,
+                                                                    child: Container(
+                                                                      margin: EdgeInsets.only(top: 15.0,),
+                                                                      child: Card(
+                                                                        shape: RoundedRectangleBorder(
+                                                                          borderRadius: BorderRadius.circular(8.0),
+                                                                        ),
+                                                                        elevation: 5.0,
+                                                                        child: Stack(
+                                                                          children: <Widget>[
+                                                                            Container(
+                                                                              decoration: BoxDecoration(
+                                                                                shape: BoxShape.rectangle,
+                                                                                borderRadius:
+                                                                                BorderRadius.circular(10.0),
+                                                                                image: DecorationImage(
+                                                                                  fit: BoxFit.fill,
+                                                                                  image: AssetImage(
+                                                                                    "images/13.jpg",
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                            Expanded(
+                                                              flex: 3,
+                                                              child: Stack(
+                                                                children: <Widget>[
+                                                                  Container(
+                                                                    child: Card(
+                                                                      shape: RoundedRectangleBorder(
+                                                                        borderRadius: BorderRadius.circular(8.0),
+                                                                      ),
+                                                                      elevation: 5.0,
+                                                                      child: Stack(
+                                                                        children: <Widget>[
+                                                                          Container(
+                                                                            decoration: BoxDecoration(
+                                                                              shape: BoxShape.rectangle,
+                                                                              borderRadius:
+                                                                              BorderRadius.circular(10.0),
+                                                                              image: DecorationImage(
+                                                                                fit: BoxFit.fill,
+                                                                                image: AssetImage(
+                                                                                  "images/13.jpg",
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                  ),
+                                                                  Container(
+                                                                    decoration: BoxDecoration(shape: BoxShape.rectangle,borderRadius: BorderRadius.circular(8.0),color: Color(0xff99000000)),
+                                                                  ),
+                                                                  Container(
+                                                                    alignment:
+                                                                    Alignment
+                                                                        .center,
+                                                                    child:
+                                                                    Text(
+                                                                      '15 photos',
+                                                                      style:
+                                                                      TextStyle(
+                                                                        color:
+                                                                        Colors.white,
+                                                                        fontStyle:
+                                                                        FontStyle.normal,
+                                                                        fontWeight:
+                                                                        FontWeight.w400,
+                                                                        fontSize:
+                                                                        24.0,
+                                                                      ),
+                                                                      textAlign:
+                                                                      TextAlign.center,
+                                                                    ),
+                                                                  ),
+                                                                ],
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      );
+                                    },
+                                  ),
                                 ),
                               ),
                             ],
@@ -1150,23 +1849,22 @@ class _HomePage extends State<HomePage> {
                                     child: Stack(
                                       children: <Widget>[
                                         Container(
-                                          decoration: new BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
                                             borderRadius:
                                                 BorderRadius.circular(10.0),
-                                            image: new DecorationImage(
+                                            image: DecorationImage(
                                               fit: BoxFit.fill,
-                                              image: new AssetImage(
+                                              image: AssetImage(
                                                 "images/13.jpg",
                                               ),
                                             ),
                                           ),
                                         ),
                                         Container(
-                                          decoration: new BoxDecoration(
+                                          decoration: BoxDecoration(
                                             shape: BoxShape.rectangle,
-                                            borderRadius:
-                                                BorderRadius.circular(10.0),
+                                            borderRadius: BorderRadius.circular(10.0),
                                           ),
                                           alignment: Alignment.bottomCenter,
                                           child: ClipRect(

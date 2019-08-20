@@ -25,13 +25,6 @@ class Assets {
   static String PAYPAL = "images/paypal.png";
   static String CASHONDELIVERY = "images/cash-on-delivery.png";
   static String LOGO = "images/FoodBuff-logo.png";
-//  static String MENU_MANAGE_CUSTOMER = "assest/menu/managecustomercontect.png";
-//  static String MENU_MANAGE_FOLLOWUP = "assest/menu/managefollowup.png";
-//  static String MENU_MANAGE_LEAVE = "assest/menu/manageleave.png";
-//  static String MENU_MANAGE_ORDER = "assest/menu/manageorder.png";
-//  static String MENU_MANAGE_PLAN = "assest/menu/manageplanfortheday.png";
-//  static String MENU_MARKET_EXPANSE = "assest/menu/marketexpansion.png";
-//  static String MENU_MARKET_PENETRATION = "assest/menu/marketpenetration.png";
-//  static String MENU_SITE_LOCATION = "assest/menu/sitelocation.png";
+  static String STARTER = "images/starter.jpg";
 
 }

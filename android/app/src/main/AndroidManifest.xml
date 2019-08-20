@@ -6,8 +6,8 @@ package="com.example.flutter_getdrool">
 
 <application
     android:name="io.flutter.app.FlutterApplication"
-    android:label="GetDrool"
-    android:icon="@mipmap/ic_launcher">
+    android:label="FoodBuff"
+    android:icon="@mipmap/foodbufflogo">
     <meta-data
         android:name="io.flutter.app.android.SplashScreenUntilFirstFrame"
         android:value="true" />

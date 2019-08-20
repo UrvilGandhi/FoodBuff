@@ -1,14 +1,4 @@
-import 'package:flutter/material.dart';
-
 class Constant {
-//  static int Home = 0;
-//  static int Messages = 1;
-//  static int Invite_Designers = 2;
-//  static int My_Likes = 3;
-//  static int My_Library = 4;
-//  static int Jobs_for_you = 5;
-//  static int Account_settings = 6;
-
   static int Home = 10;
   static int Search = 11;
   static int Order = 12;
@@ -21,4 +11,18 @@ class Constant {
   static int Mains = 24;
   static int Beverages = 25;
   static int Desserts = 26;
+
+  static String userID = "userID";
+  static String name = "name";
+  static String email = "email";
+  static String mobileNo = "mobile_no";
+  static String address = "address";
+
+  static String MAIN_URL = "http://192.168.9.76:8888/user/";
+
+  static String registerApiName = MAIN_URL + "register";
+  static String loginApiName = MAIN_URL + "login";
+
+  static int registerApiReq = 1;
+  static int loginApiReq = 2;
 }
