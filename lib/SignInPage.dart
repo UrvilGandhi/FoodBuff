@@ -148,13 +148,19 @@ class _SignInPageState extends State<SignInPage> implements ApiViewContract {
                     child: RaisedButton(
                       color: Color(0xff00AF41),
                       onPressed: () {
-                        if(_usernameController.text == ""){
-                          Toast.makeText(context, 'Enter valid username');
-                        }else if(_passwordController.text == ''){
-                          Toast.makeText(context, 'Enter valid password');
-                        }else{
-                          loginApi();
-                        }
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => HomePage(),
+                          ),
+                        );
+//                        if(_usernameController.text == ""){
+//                          Toast.makeText(context, 'Enter valid username');
+//                        }else if(_passwordController.text == ''){
+//                          Toast.makeText(context, 'Enter valid password');
+//                        }else{
+//                          loginApi();
+//                        }
                       },
                       child: Padding(
                         padding: const EdgeInsets.all(8.0),
@@ -224,10 +230,10 @@ class _SignInPageState extends State<SignInPage> implements ApiViewContract {
           .setPref(Constant.name, map["loggeduser"]["name"].toString());
       PreferenceManager()
           .setPref(Constant.email, map["loggeduser"]["email_id"].toString());
-      PreferenceManager()
-          .setPref(Constant.mobileNo, map["loggeduser"]["mobilenumber"].toString());
       PreferenceManager().setPref(
-          Constant.address, map["loggeduser"]["address"].toString());
+          Constant.mobileNo, map["loggeduser"]["mobilenumber"].toString());
+      PreferenceManager()
+          .setPref(Constant.address, map["loggeduser"]["address"].toString());
       Route route = MaterialPageRoute(builder: (context) => HomePage());
       Navigator.pushReplacement(this.context, route);
       Toast.makeText(this.context, map['message']);
